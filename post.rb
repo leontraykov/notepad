@@ -4,6 +4,14 @@ class Post
     @text = nil
   end
 
+  def self.post_types
+    [Link, Memo, Task]
+  end
+
+  def self.create(type_index)
+    return post_types[type_index].new
+  end
+
   def read_from_console
   end
 
@@ -13,7 +21,7 @@ class Post
   def save
     file = File.new(file_path, "w")
 
-    for item in strings do
+    for item in to_strings do
       file.puts(item)
     end
 
