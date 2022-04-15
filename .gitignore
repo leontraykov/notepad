@@ -1,3 +1,6 @@
+.gitignore
 Memo*
 Link*
 Task*
+notepad.sqlite
+notepad.sqlite-journal
